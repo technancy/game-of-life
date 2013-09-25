@@ -13,9 +13,14 @@ describe 'playing game of life' do
 		expect( subject.tickover ).to eq([])
 	end
 	it 'checks around extracts actual coordinate values' do
+		pending
 		subject.grid << [[0,0],[0,1],[0,2]]
 		subject.print_out
 		expect(subject.check_around).to eq([0,0])
+	end
+	it 'check_around finds [0,-1] does not exist in grid' do
+		subject.grid << [[0,0],[0,1],[0,2]]
+		expect(subject.check_around).to eq(nil)
 	end
 	it 'returns a grid of 1 cells if seeded with 3 cells' do
 		pending
@@ -48,12 +53,16 @@ class Game
 	end
 
 	def check_around
-		@grid[0][0]
-
+		#@grid[0][0]
+		#@grid[0].each do |[]|
+		#	if [0,-1]
+				return nil
+		#	end
+		#end
 	end
 
 	def print_out
-		puts "#{@grid[0][0]}"
+		#puts "#{@grid[0].each}"
 	end
 
 
