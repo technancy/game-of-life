@@ -38,8 +38,7 @@ class Game
 	attr_accessor :grid
 
 	def initialize
-		@grid = []
-		@neighbour = 0		
+		@grid = []	
 	end
 
 	def tickover
@@ -49,6 +48,7 @@ class Game
 		@grid
 
 		#@alive = @alive ? [2,3].include?(neighbours) : neighbours == 3
+		
 	end
 
 	def check_around
