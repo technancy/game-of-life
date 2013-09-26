@@ -1,7 +1,7 @@
-describe 'playing game of life' do
+describe 'game of life' do
 
 	subject {Game.new} 
-	
+
 	it 'creates empty array to represent grid' do
 		expect(subject.grid).to be_a Array
 	end
@@ -56,15 +56,12 @@ class Game
 		y = 0
 
 		matches = [[x-1,y-1], [x,y-1] , [x+1,y-1] , [x-1,y] , [x+1,y] , [x-1,y+1] , [x,y+1] , [x+1,y+1]]	
-		puts "MATCHES #{matches}"
-		puts "GRID = #{@grid.inspect}"	
-
 		intersection = @grid & matches
 			
-				if !intersection.empty?		
-					neighbour = intersection.size
-					return "you have #{neighbour} neighbour(s)"				
-				end
+			if !intersection.empty?		
+				neighbour = intersection.size
+				return "you have #{neighbour} neighbour(s)"				
+			end
 
 	end
 
